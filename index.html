@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prompt Loom</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Playfair+Display:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <div class="page">
+      <header class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Prompt generator</p>
+          <h1>Prompt Loom</h1>
+          <p class="subtitle">
+            Write a single line idea and get 10 unique AI prompts you can drop
+            into any model. Focus, remix, and ship faster.
+          </p>
+        </div>
+        <div class="hero-card">
+          <div class="stat">
+            <span>10</span>
+            <p>prompts per idea</p>
+          </div>
+          <div class="stat">
+            <span>3</span>
+            <p>angles per concept</p>
+          </div>
+          <div class="stat">
+            <span>1</span>
+            <p>line input</p>
+          </div>
+        </div>
+      </header>
+
+      <main class="grid">
+        <section class="panel">
+          <div class="panel-head">
+            <h2>One-line idea</h2>
+            <p class="hint">Example: cozy café for remote workers</p>
+          </div>
+          <form id="promptForm">
+            <label class="sr-only" for="seedInput">Your idea</label>
+            <input
+              id="seedInput"
+              type="text"
+              placeholder="Type your concept in one line"
+              autocomplete="off"
+              required
+            />
+            <div class="form-row">
+              <button class="primary" type="submit">Generate 10 prompts</button>
+              <button id="shuffleBtn" class="ghost" type="button">Remix</button>
+            </div>
+          </form>
+          <div class="chip-row" id="chipRow">
+            <button class="chip" data-chip="visual">Visual</button>
+            <button class="chip" data-chip="branding">Branding</button>
+            <button class="chip" data-chip="writing">Writing</button>
+            <button class="chip" data-chip="product">Product</button>
+            <button class="chip" data-chip="marketing">Marketing</button>
+          </div>
+        </section>
+
+        <section class="panel output">
+          <div class="panel-head">
+            <h2>Generated prompts</h2>
+            <div class="actions">
+              <button id="copyAll" class="ghost" type="button">Copy all</button>
+              <span id="count" class="hint">0 of 10 ready</span>
+            </div>
+          </div>
+          <ol id="promptList" class="prompt-list"></ol>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
